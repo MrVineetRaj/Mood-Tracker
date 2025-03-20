@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  --bg-color: rgb(255, 255, 255);
+  --text-color: rgb(0, 0, 0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--text-color);
+  background: var(--bg-color);
+  transition: all 0.2s ease-in-out;
+  max-width: 100svw;
+  font-family: Rubik;
+}
+
+button {
+  transition: all 0.2s ease-in-out;
+  &:active {
+    scale: 0.85;
+  }
+}
+
+/* Styling for Navbar */
+nav {
+  padding: 10px 20px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+}
+
+/* Styling for the main container */
+.container {
+  padding: 10px 50px;
+  .top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .time-range {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid black;
+
+      button {
+        padding: 5px 10px;
+        border: 0;
+        border-radius: 0;
+        cursor: pointer;
+
+        &:active {
+          scale: 1;
+        }
+      }
+
+      .active {
+        background: #ff6600;
+        color: white;
+      }
+    }
+  }
+
+  /* Styling for the container that will have different views for tracking moods */
+  .timeline-container {
+    margin-top: 10px;
+    border: 2px solid #ff6600;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--text-color);
+      color: var(--bg-color);
+      opacity: 0.5;
+      padding: 10px 11px;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+
+    /* styling for the prev and next button */
+    .fa-arrow-right {
+
+      right: 10px;
+    }
+    .fa-arrow-left {
+      left: 10px;
+    }
+
+    /* styling if the user is on the day-wise view */
+    .day-wise {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 10px;
+
+      #attached-emoji {
+        font-size: 100px;
+        background: #cfcfcf;
+        min-width: 100px;
+        min-height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+      }
+    }
+
+    /* styling if the user is on the week-wise view */
+    .week-wise {
+      .week-range {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center;
+        margin: 10px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      .internal-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        padding: 10px;
+
+        .week-day {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 5px;
+          border-radius: 5px;
+          padding: 10px 0;
+          background: var(--bg-color);
+          border: 2px solid #ff6600;
+          cursor: pointer;
+          min-width: 90px;
+
+          &:hover {
+            background: #ff6600;
+            color: white;
+            transition: all 0.2s ease-in-out;
+          }
+        }
+        .attached-emoji {
+          font-size: 41px;
+          text-align: center;
+          background: #cfcfcf;
+          border-radius: 50px;
+          min-width: 50px;
+          min-height: 50px;
+        }
+      }
+    }
+
+    /* styling if the user is on the month-wise view */
+    .month-wise {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .month {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: center;
+        margin: 10px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .internal-container {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 3px;
+        /* width: 60vw; */
+        padding: 10px;
+        /* background: red; */
+      }
+
+      .day-name {
+        border: 2px solid #ff6600;
+        font-size: 14px;
+        min-width: 30px;
+        text-align: center;
+        border-radius: 5px;
+        width: 100%;
+      }
+
+      .month-day {
+        font-size: 14px;
+        min-width: 30px;
+        text-align: center;
+        border: 2px solid #ff6600;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #attached-emoji {
+        font-size: 25px;
+        background: #cfcfcf;
+        min-width: 30px;
+        min-height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+      }
+    }
+  }
+}
+
+/* Styling for the emoji input container */
+.emoji-input-container {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-color);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  border-radius: 5px;
+  border: 2px solid blue;
+  box-shadow: 0 0 10px var(--text-color);
+}
+.emojis-for-input-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.emoji-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@keyframe animateDayWise {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 10px 20px;
+  }
+}

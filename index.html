@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Mood Tracker</title>
+    <script
+      src="https://kit.fontawesome.com/8b4a89458f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <h1>Emoji Tracker</h1>
+      </div>
+
+      <!-- <div class="right-nav"> -->
+      <i id="theme-toggle" style="cursor: pointer;" class="fa fa-moon"></i>
+      <!-- </div> -->
+    </nav>
+
+    <main>
+      <div class="container">
+        <div class="top">
+          <h2>Dashboard</h2>
+          <div class="time-range">
+            <button id="day-wise" class="active">Day</button>
+            <button id="week-wise">Week</button>
+            <button id="month-wise">Month</button>
+          </div>
+        </div>
+        <div class="emoji-input-container">
+          <h3>What about today ?</h3>
+          <div class="emojis-for-input-container">
+            <div class="emoji-input">😊</div>
+            <div class="emoji-input">😢</div>
+            <div class="emoji-input">😡</div>
+            <div class="emoji-input">😱</div>
+            <div class="emoji-input">😎</div>
+            <div class="emoji-input">😴</div>
+            <div class="emoji-input">😇</div>
+            <div class="emoji-input">🥳</div>
+          </div>
+        </div>
+        <div class="timeline-container"></div>
+      </div>
+    </main>
+
+    <script type="module" src="./utils.js"></script>
+    <!-- for importing utils function in script.js -->
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
