@@ -1,4 +1,4 @@
-# Emoji Tracker
+# Emoji Tracker [DEMO](https://moodtracker.unknownbug.tech/)
 
 A simple `mood tracker` built with raw `html`,`css` and `javascript`
 
